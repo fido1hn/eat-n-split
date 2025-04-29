@@ -25,7 +25,10 @@ function App() {
       <div className="sidebar">
         <FriendsList />
         <FormAddFriend />
+        <Button>Add friend</Button>
       </div>
+
+      <FormSplitBill />
     </div>
   );
 }
@@ -72,13 +75,38 @@ function Button({ children }) {
 function FormAddFriend() {
   return (
     <form className="form-add-friend">
-      <label htmlFor="">🧑‍🤝‍🧑 Friend name</label>
-      <input type="text" name="" id="" />
+      <label>🧑‍🤝‍🧑 Friend name</label>
+      <input type="text" />
 
-      <label htmlFor="">🌇 Image URL</label>
-      <input type="text" name="" id="" />
+      <label>🌇 Image URL</label>
+      <input type="text" />
 
       <Button>Add Friend</Button>
+    </form>
+  );
+}
+
+function FormSplitBill() {
+  return (
+    <form className="form-split-bill">
+      <h2>Split a bill with X</h2>
+
+      <label>💰 Bill value</label>
+      <input type="text" />
+
+      <label>👱‍♂️ Your expense</label>
+      <input type="text" />
+
+      <label>🙋‍♂️ X's expense</label>
+      <input type="text" disabled />
+
+      <label>🤑 Who is paying the bill?</label>
+      <select>
+        <option value="user">You</option>
+        <option value="friend">X</option>
+      </select>
+
+      <Button>Split bill</Button>
     </form>
   );
 }
